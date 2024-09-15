@@ -44,6 +44,7 @@ class Scraper:
         """function to scrape data"""
         print("Fetching data from list of Suburbs...")
         for url_suburb in self.url_suburbs:
+            print("\tFetching data for:", url_suburb)
             res = req.get(url_suburb, timeout=10000)
             data = bs(res.content, "html5lib")
             heading = data.find(
